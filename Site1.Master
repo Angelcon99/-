@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="학사관리_2023_1912053오혜성.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>학사관리(1912053오혜성)</title>
+    <style>
+        div {
+            /* border: 1px solid #ccc; */
+        }
+        #container {
+            width:1000px;
+            padding:0;      
+            margin:0 auto;  /* 화면의 중앙에 배치 */
+        }
+        #header {
+            padding:0;  
+            margin-bottom:1px;
+            background:#eee;
+        }
+        #contents {
+            width: 760px;  
+            padding: 10px;  
+            float: right;  
+            margin-bottom: 20px;  
+        }
+        #sidebar {
+            width: 200px;  
+            padding: 10px;  
+            float: left;
+            margin-bottom: 20px;  
+            background:#eee;
+        }
+        #footer {
+            clear:both;  
+            padding:10px;
+            background:#eee;
+            margin-bottom: 50px;
+        }
+        .login{
+            margin-left: 65px;
+        }
+        .logout{
+            margin-left: 50px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="container">
+            <div id="header">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/img/top.jpg"/>
+            </div>
+            <div id="sidebar">
+                <div id="aaa">
+                    <asp:Panel ID="Panel1" runat="server">
+                    <asp:Label ID="Label1" runat="server" Text="아이디" Width="60px"></asp:Label>
+                    <asp:TextBox ID="txtID" runat="server" Width="100px"></asp:TextBox><br />
+                    <asp:Label ID="Label2" runat="server" Text="암호" Width="60px"></asp:Label>
+                    <asp:TextBox ID="txtPwd" runat="server" Width="100px" TextMode="Password"></asp:TextBox><br />
+                    <asp:Button ID="btnLogin" runat="server" Text="로그인" OnClick="btnLogin_Click" CssClass="login" />
+                    <br />
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Register.aspx">회원가입</asp:HyperLink>
+                    </asp:Panel>
+                </div>
+                              
+                <asp:Panel ID="Panel2" runat="server">
+                    <asp:Label ID="lbID" runat="server" Text="Label"></asp:Label><br />
+                    <asp:Button ID="btnLogout" runat="server" Text="로그아웃" OnClick="btnLogout_Click" CssClass="logout" />
+                </asp:Panel>
+                &nbsp;                
+                <ul>
+                    <li>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="./Student.aspx">학적 관리</asp:HyperLink>
+
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="./StudentList.aspx">학생 리스트</asp:HyperLink>
+                    </li>                    
+                    <li>
+                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/board">게시판</asp:HyperLink>
+                    </li>
+                    <li>메뉴3</li>
+                    <li>메뉴4</li>
+                    <li>메뉴5</li>          
+                </ul>
+            </div>
+            <div id="contents">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+	            </asp:ContentPlaceHolder>          
+            </div>
+            <div id="footer">
+                <p style="text-align:center">울산광역시 동구 봉수로 101 울산과학대학교, SW개발전공 <br />
+                (c) Copyright 1912503오혜성</p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

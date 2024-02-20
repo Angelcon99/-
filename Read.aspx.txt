@@ -1,0 +1,50 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Read.aspx.cs" Inherits="WebBoard.Board.Read" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+<style>
+    #title { font-size:36px; text-align:center; }
+</style>
+
+<script type="text/javascript">
+    function ConfirmDelete() {
+        return confirm("정말 삭제할까요?");
+    }
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="title">
+            <asp:Label ID="Label1" runat="server" Text="글 읽기"></asp:Label>
+        </div>
+        <div>
+            글쓴이: <asp:Label ID="lbWriter" runat="server" Text="Label"></asp:Label>
+        </div>
+        <div>
+            날짜: <asp:Label ID="lbDate" runat="server" Text="Label"></asp:Label>
+        </div>
+        <div>
+            조회수: <asp:Label ID="lbCount" runat="server" Text="Label"></asp:Label>
+        </div>
+                <div>
+                    제목: <asp:Label ID="lbTitle" runat="server" Text="Label"></asp:Label>
+        </div>
+        <div>
+            내용: <asp:Label ID="lbMessage" runat="server" Text="Label"></asp:Label>
+        </div>
+        <div>
+            파일: <asp:HyperLink ID="HyperLink1" runat="server">HyperLink</asp:HyperLink>
+        </div>
+        <div>
+            <asp:Button ID="btnEdit" runat="server" OnClick="btnEdit_Click" Text="수정" />
+            <asp:Button ID="btnReply" runat="server" OnClick="btnReply_Click" Text="답변글" />
+            <asp:Button ID="btnDelete" runat="server" OnClick="btnDelete_Click" Text="삭제" OnClientClick="return ConfirmDelete()" />
+            <asp:Button ID="btnList" runat="server" OnClick="btnList_Click" Text="목록으로" />
+            </div>
+    </form>
+</body>
+</html>
